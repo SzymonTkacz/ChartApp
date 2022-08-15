@@ -16,9 +16,12 @@
       <hr>
       <div class="main-content">
         <p>CHUY</p>
+        <div *ngFor="let item of usersData">
+          {{item?.first}}
+        </div>
       </div>
       <hr>
-      <button class="btn btn-success">Get Data</button>
+      <button class="btn btn-success" (click)="getUsers()">Get Data</button>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <div class="col-sm-2 sidenav">
