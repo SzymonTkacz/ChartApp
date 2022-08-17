@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  usersUrl: "https://randomuser.me/api/?results=1000&nat=fr"
+  usersUrl: "https://randomuser.me/api/?results=1000&nat=fr&gender=male"
 };
 
 /*
