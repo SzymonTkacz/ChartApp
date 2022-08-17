@@ -1,0 +1,19 @@
+<h3>Oldest users table</h3>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">First name</th>
+        <th scope="col">Last name</th>
+        <th scope="col">Birth date</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of oldestUsers; let i = index">
+        <th scope="row">{{i + 1}}</th>
+        <td>{{user?.name?.first}}</td>
+        <td>{{user?.name?.last}}</td>
+        <td>{{user?.dob?.date | date: 'dd/MM/yyyy'}}</td>
+      </tr>
+    </tbody>
+  </table>

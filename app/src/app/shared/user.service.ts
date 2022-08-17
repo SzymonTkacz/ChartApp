@@ -1,15 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { User } from '../models/user-model';
+import { User, UsersResponse } from '../models/user-model';
+import { map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
-  private usersUrl = "https://randomuser.me/api/?results=3"
   constructor(private http: HttpClient) { }
   getUsers() {
-    return this.http.get<User[]>(this.usersUrl)
+    return this.http.get<UsersResponse>(environment.usersUrl)
   }
 }

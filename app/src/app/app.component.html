@@ -15,10 +15,8 @@
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       <hr>
       <div class="main-content">
-        <p>CHUY</p>
-        <div *ngFor="let item of usersData">
-          {{item?.first}}
-        </div>
+        <app-table [oldestUsers]="oldestUsers"></app-table>
+        <h1>holder</h1>
       </div>
       <hr>
       <button class="btn btn-success" (click)="getUsers()">Get Data</button>

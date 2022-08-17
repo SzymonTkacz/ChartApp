@@ -10,11 +10,13 @@ import { UserService } from './shared/user.service';
 export class AppComponent {
   title = 'app';
   usersData: User[]
+  oldestUsers: User[]
   constructor(private userService: UserService) {}
   getUsers() {
-    this.userService.getUsers().subscribe((res: any[]) => {
-      console.log(res)
-      this.usersData = res
+    this.userService.getUsers().subscribe(res => {
+      this.oldestUsers = res.results.sort((a, b) => new Date(a.dob.date).getTime() - new Date(b.dob.date).getTime()).slice(0,10);
+      console.log(this.oldestUsers)
+      this.usersData = res.results
     })
   }
 }
