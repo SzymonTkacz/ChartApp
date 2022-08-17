@@ -1,7 +1,7 @@
 <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Logo</a>
+      <small>Created by <strong>Szymon Tkacz</strong></small>
     </div>
   </div>
 </nav>
@@ -10,16 +10,17 @@
   <div class="row content">
     <div class="col-sm-2 sidenav">
     </div>
-    <div class="col-sm-8 text-left"> 
+    <div class="col-sm-8 app-container"> 
       <h1>Welcome</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      <p>This is a simple application which use <a href="https://randomuser.me/">https://randomuser.me/</a> API to load data. </p>
+      <p>When you click this green button below, application will fetch data and fill table with top 10 oldest people from all 1000 random french men and will make a chart with age ranking of all men.</p>
       <hr>
-      <div class="main-content">
+      <div class="main-content" [ngClass]="usersData ? 'overflow-auto' : 'overflow-hidden'">        
         <app-table [oldestUsers]="oldestUsers"></app-table>
-        <h1>holder</h1>
+        <app-chart></app-chart>        
       </div>
       <hr>
-      <button class="btn btn-success" (click)="getUsers()">Get Data</button>
+      <button class="btn btn-success" (click)="getUsers()">Get random users data</button>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>
     <div class="col-sm-2 sidenav">

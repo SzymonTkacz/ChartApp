@@ -1,9 +1,30 @@
+.app-container {
+    min-width: 500px;
+}
+
 .main-content {
-    border: 2px solid red;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
     height: 550px;
+    padding: 5px;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    flex-wrap: wrap-reverse;
-    overflow-y: auto;
+    flex-wrap: wrap;
+}
+
+.overflow-auto {
+    overflow: auto; 
+}
+
+.overflow-hidden {
+    overflow: hidden;
+}
+
+button {
+    margin-bottom: 20px;
+}
+
+small {
+    font-size: 11px;
 }

@@ -1,4 +1,4 @@
-<h3>Oldest users table</h3>
+<h5>Top 10 oldest men</h5>
 <table class="table">
     <thead>
       <tr>
@@ -17,3 +17,6 @@
       </tr>
     </tbody>
   </table>
+  <div *ngIf="!oldestUsers">
+    <p>Click button below to fill table with data</p>
+  </div>
