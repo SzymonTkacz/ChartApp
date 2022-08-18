@@ -1,5 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
+import { Subject } from 'rxjs';
 import { ChartComponent } from './components/chart/chart.component';
+import { LoaderService } from './components/loader/loader.service';
 import { AgeRange } from './models/chart-model';
 import { User } from './models/user-model';
 import { UserService } from './shared/user.service';
@@ -14,7 +16,13 @@ export class AppComponent {
   usersData: User[]
   chartData: AgeRange = new AgeRange()
   @ViewChild(ChartComponent) chartComponent:ChartComponent;
-  constructor(private userService: UserService) {}
+  isLoading: Subject<boolean> = this.loaderService.isLoading;
+
+  constructor(
+    private userService: UserService, 
+    private loaderService: LoaderService
+  ) {}
+  
   getUsers() {
     this.userService.getUsers().subscribe({
       next: (res) => {

@@ -1,5 +1,6 @@
 .app-container {
     min-width: 500px;
+    position: relative;
 }
 
 .main-content {
@@ -27,4 +28,16 @@ button {
 
 small {
     font-size: 11px;
+}
+
+.loading-screen {
+    position: absolute;
+    height: 550px;
+    background: rgba(0, 0, 0, .8);
+    border-radius: 5px;
+    width: calc(100% - 24px);
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

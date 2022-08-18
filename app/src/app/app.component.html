@@ -15,11 +15,14 @@
       <p>This is a simple application which use <a href="https://randomuser.me/">https://randomuser.me/</a> API to load data. </p>
       <p>When you click this green button below, application will fetch data and fill table with top 10 oldest people from all 1000 random french men and will make a chart with age ranking of all men.</p>
       <hr>
+      <div class="loading-screen" *ngIf="isLoading | async">
+        <app-loader></app-loader>
+      </div>
       <div class="main-content" [ngClass]="usersData ? 'overflow-auto' : 'overflow-hidden'">        
         <app-table [oldestUsers]="oldestUsers"></app-table>
         <app-chart></app-chart>        
       </div>
-      <hr>
+      <hr>      
       <button class="btn btn-success" (click)="getUsers()">Get random users data</button>
       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
     </div>

@@ -23,7 +23,7 @@ export class ChartComponent {
       data: {
           labels: ['20-29', '30-39', '40-49', '50-59', '60-69', '70+'],
           datasets: [{
-              label: 'Random men age ranking bar',
+              label: 'Bar chart showing the number of men in a given age category',
               data: [users.under30th, users.under40th, users.under50th, users.under60th, users.under70th, users.over70th],
               backgroundColor: [
                   'rgba(255, 99, 132, 0.2)',
