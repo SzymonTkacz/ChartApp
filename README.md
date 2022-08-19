@@ -1,6 +1,6 @@
 # ChartApp
 
-##Start App:
+## Start App:
 1) Go to app folder
 2) Open terminal
 3) Run commands below: 
