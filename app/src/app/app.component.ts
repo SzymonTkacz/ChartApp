@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Subject } from 'rxjs';
 import { ChartComponent } from './components/chart/chart.component';
 import { LoaderService } from './components/loader/loader.service';
@@ -11,9 +11,10 @@ import { UserService } from './shared/user.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   oldestUsers: User[]
   usersData: User[]
+  fifthRefresh = false
   chartData: AgeRange = new AgeRange()
   @ViewChild(ChartComponent) chartComponent:ChartComponent;
   isLoading: Subject<boolean> = this.loaderService.isLoading;
@@ -22,7 +23,21 @@ export class AppComponent {
     private userService: UserService, 
     private loaderService: LoaderService
   ) {}
-  
+  ngOnInit(): void {
+    this.incrementRefreshCounter()
+  }
+
+  incrementRefreshCounter() {
+    if (localStorage.getItem("refreshCounter") === null) {
+      localStorage.setItem("refreshCounter", "1")
+    } 
+    else {
+      let incremented = parseInt(localStorage.getItem('refreshCounter')!) + 1
+      localStorage.setItem("refreshCounter", incremented.toString())
+      incremented % 5 == 0 ? this.fifthRefresh = true : this.fifthRefresh = false
+    }   
+  }
+
   getUsers() {
     this.userService.getUsers().subscribe({
       next: (res) => {
