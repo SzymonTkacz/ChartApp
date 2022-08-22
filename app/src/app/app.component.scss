@@ -6,12 +6,10 @@
 .main-content {
     border: 1px solid #CCCCCC;
     border-radius: 5px;
-    height: 550px;
+    height: 525px;
     padding: 5px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
+    flex-direction:column-reverse;
 }
 
 .overflow-auto {

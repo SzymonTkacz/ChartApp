@@ -18,9 +18,9 @@
       <div class="loading-screen" *ngIf="isLoading | async">
         <app-loader></app-loader>
       </div>
-      <div class="main-content" [ngClass]="usersData ? 'overflow-auto' : 'overflow-hidden'">        
-        <app-table [oldestUsers]="oldestUsers"></app-table>
-        <app-chart></app-chart>        
+      <div class="main-content" [ngClass]="usersData ? 'overflow-auto' : 'overflow-hidden'">                
+        <app-table [oldestUsers]="oldestUsers"></app-table>               
+        <app-chart></app-chart> 
       </div>
       <hr>      
       <button class="btn btn-success" (click)="getUsers()">Get random users data</button>

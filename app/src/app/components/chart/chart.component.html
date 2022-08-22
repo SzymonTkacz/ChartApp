@@ -1,7 +1,7 @@
-<div>
-    <div *ngIf="!chart">
+<div>    
+     <canvas id="barCanvas" style="height: 260px; max-height:260px"></canvas>    
+     <div *ngIf="!chart" class="mr-bottom">
         <h5>Users sorted by age</h5>
         <p>Click button below to load chart</p>
     </div>
-     <canvas id="barCanvas" style="height: 500px; max-height:500px; width:400px;"></canvas>    
 </div>
